@@ -108,13 +108,13 @@
         <groupId>com.google.cloud.tools</groupId>
         <artifactId>appengine-maven-plugin</artifactId>
         <version>${appengine-maven-plugin-version}</version>
-        <!-- 
+    
         <configuration>
                 <devserver.host>0.0.0.0</devserver.host>
                 <devserver.port>8181</devserver.port>
                 <devserver.server>xiaosubing</devserver.server>
         </configuration>
-         -->
+      
       </plugin>
     </plugins>
   </build>
