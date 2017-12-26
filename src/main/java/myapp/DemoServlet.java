@@ -62,7 +62,7 @@ public class DemoServlet extends HttpServlet {
 		} catch (Exception e) {
 			e.printStackTrace();
 			resp.setContentType("text/plain");
-			resp.getWriter().println("{ \"name\": \"" + e.getMessage() + "\" }");
+			resp.getWriter().println("{ \"name1\": \"" + "exp" + e.getMessage() + "\" }");
 		}
 
 		resp.setContentType("text/plain");
