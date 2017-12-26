@@ -55,7 +55,7 @@ public class DemoServlet extends HttpServlet {
 //			while (resultSet.next()) {
 //				System.out.println(resultSet.getString(1) + "." + resultSet.getString(2));
 //			}
-		} catch (SQLException | ClassNotFoundException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 			resp.setContentType("text/plain");
 			resp.getWriter().println("{ \"name\": \"" + e.getMessage() + "\" }");
