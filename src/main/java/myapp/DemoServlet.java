@@ -50,15 +50,15 @@ public class DemoServlet extends HttpServlet {
 			connection = DriverManager.getConnection(jdbcUrl, username, password);
 //			connection = DriverManager.getConnection("jdbc:postgresql://192.168.120.128:5432/la", "postgres",
 //					"19786028");
-			Statement statement = connection.createStatement();
-			ResultSet resultSet = statement.executeQuery("SELECT * FROM LA_USER");
-			if(resultSet.next()){
-				resp.setContentType("text/plain");
-				resp.getWriter().println("{ \"name\": \"" + "has value" + "\" }");
-			}else{
-				resp.setContentType("text/plain");
-				resp.getWriter().println("{ \"name\": \"" + "null value" + "\" }");
-			}
+//			Statement statement = connection.createStatement();
+//			ResultSet resultSet = statement.executeQuery("SELECT * FROM LA_USER");
+//			if(resultSet.next()){
+//				resp.setContentType("text/plain");
+//				resp.getWriter().println("{ \"name\": \"" + "has value" + "\" }");
+//			}else{
+//				resp.setContentType("text/plain");
+//				resp.getWriter().println("{ \"name\": \"" + "null value" + "\" }");
+//			}
 		} catch (Exception e) {
 			e.printStackTrace();
 			resp.setContentType("text/plain");
