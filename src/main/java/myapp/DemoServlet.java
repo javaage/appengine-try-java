@@ -53,6 +53,7 @@ public class DemoServlet extends HttpServlet {
 	 
 	    Connection connection;
 		try {
+			Class.forName("org.postgresql.Driver");
 			connection = DriverManager.getConnection(jdbcUrl, username, password);
 			Statement statement = connection.createStatement();
 			ResultSet resultSet =
@@ -61,7 +62,7 @@ public class DemoServlet extends HttpServlet {
 			      while (resultSet.next()) {
 			        System.out.println(resultSet.getString(1) + "." + resultSet.getString(2));
 			      }
-		} catch (SQLException e) {
+		} catch (SQLException | ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			resp.setContentType("text/plain");
