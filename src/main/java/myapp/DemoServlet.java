@@ -47,7 +47,7 @@ public class DemoServlet extends HttpServlet {
 		Connection connection;
 		try {
 			Class.forName("org.postgresql.Driver");
-//			connection = DriverManager.getConnection(jdbcUrl, username, password);
+			connection = DriverManager.getConnection(jdbcUrl, username, password);
 //			connection = DriverManager.getConnection("jdbc:postgresql://192.168.120.128:5432/la", "postgres",
 //					"19786028");
 //			Statement statement = connection.createStatement();
@@ -59,7 +59,11 @@ public class DemoServlet extends HttpServlet {
 //				resp.setContentType("text/plain");
 //				resp.getWriter().println("{ \"name\": \"" + "null value" + "\" }");
 //			}
-		} catch (Exception e) {
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+			resp.setContentType("text/plain");
+			resp.getWriter().println("{ \"name1\": \"" + "exp" + e.getMessage() + "\" }");
+		} catch (SQLException e) {
 			e.printStackTrace();
 			resp.setContentType("text/plain");
 			resp.getWriter().println("{ \"name1\": \"" + "exp" + e.getMessage() + "\" }");
